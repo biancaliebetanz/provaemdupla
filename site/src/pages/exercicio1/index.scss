@@ -1,7 +1,8 @@
 .fundo {
-    width: 100vh;
-    height: 120vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #4caf3f, #8832ba);
+
 }

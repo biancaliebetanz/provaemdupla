@@ -11,6 +11,7 @@ export default function Index(){
         
         if( data <0 || data > 31){
             alert('dia inváldio')
+            setLibra(false)
         }
 
         if( mes != 'Outubro' & mes != 'Setembro') {
@@ -28,9 +29,9 @@ export default function Index(){
 
 
 return(
-        <main className="fundo">
+        <main className="fundo1">
 
-            <div>
+            <div className="card">
 
                 <h1> Seu signo é de libra?</h1>
                 <h2> Se você tiver nascido entre "Outubro" ou "Setembro", digite o dia do seu nascimento e descubra!</h2>
@@ -46,7 +47,7 @@ return(
 
                     <button onClick={Signo}>Verificar</button>
 
-                    <h2> Seu signo {libra ? '' : 'não'} é Libra!</h2>
+                    <h2> Seu signo {libra ? ' ' : 'não'} é Libra!</h2>
                     
             </div>
 

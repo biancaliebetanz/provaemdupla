@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './index.scss'
 
 export default function Index(){
     
@@ -23,7 +24,7 @@ export default function Index(){
     }
 
     return(
-        <main>
+        <main className="fundo2">
 
             <div>
 
