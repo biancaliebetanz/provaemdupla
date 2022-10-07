@@ -1,61 +1,55 @@
 import { useState } from "react";
+import './index.scss'
 
 export default function Index(){
 
     const[mes, setMes] = useState('');
     const[data, setData] = useState(0);
+    const [libra, setLibra] = useState(false);
     
     function Signo(){
-      
-    if(mes === 'Dezembro' && data > 21 || mes === 'Janeiro' && data < 22 ){
-            return 'Capricornio';
-    }
-     else   if(mes === 'Janeiro' && data > 21 || mes === 'Fevereiro' && data < 22 ){
-            return 'Aquário';
-    }
-   else if(mes === 'Fevereiro' && data > 21 || mes === 'Março' && data < 22 ){
-        return 'Peixes';
-    }
-   else if(mes === 'Março' && data > 21 || mes === 'Abril' && data < 22 ){
-        return 'Áries';
-    }
-   else if(mes === 'Abril' && data > 21 || mes === 'Maio' && data < 22 ){
-        return 'Touro';
-    }
-   else if(mes === 'Maio' && data > 21 || mes === 'Junho' && data < 22 ){
-        return 'Gêmeos';
-    }
-  else  if(mes === 'Junho' && data > 21 || mes === 'Julho' && data < 22 ){
-        return 'Cancêr';
-    }
-    else    if(mes === 'Julho' && data > 21 || mes === 'Agosto' && data < 22 ){
-        return 'Leão';
-    }
-    else    if(mes === 'Agosto' && data > 21 || mes === 'Setembro' && data < 22 ){
-        return 'Virgem';
-    
-    }else    if(mes === 'Setembro' && data > 21 || mes === 'Outubro' && data < 22 ){
-        return 'Libra';
-    }
-    else    if(mes === 'Outubro' && data > 21 || mes === 'Novembro' && data < 22 ){
-        return 'Escorpião';
         
-    }
-    else    if(mes === 'Novembro' && data > 21 || mes === 'Dezembro' && data < 22 ){
-        return 'Sagitário';
-    }
-    else{
-        throw new Error('Não existe')
-    }
+        if( data <0 || data > 31){
+            alert('dia inváldio')
+        }
+
+        if( mes != 'Outubro' & mes != 'Setembro') {
+            alert('mês inválido')
+        }
+        
+        if(mes === 'Setembro' && data > 21 || mes === 'Outubro' && data < 22 ){
+            setLibra(true)
+        }
+        else {
+            setLibra(false);
+        }
 
     }
 
 
 return(
-        <main>
-            <input type='text' value={mes} onChange={e=> setMes(e.target.value)}/>
-            <input type='number' value={data} onChange={e=> setData(Number(e.target.value))}/>
-            <button onClick={Signo}>Verificar</button>
+        <main className="fundo">
+
+            <div>
+
+                <h1> Seu signo é de libra?</h1>
+                <h2> Se você tiver nascido entre "Outubro" ou "Setembro", digite o dia do seu nascimento e descubra!</h2>
+
+                    <div>
+                        <label> Mês: </label>
+                        <input type='text' value={mes} onChange={e=> setMes(e.target.value)}/>
+                    </div>
+                    <div>
+                        <label> Dia: </label> 
+                        <input type='number' value={data} onChange={e=> setData(Number(e.target.value))}/>
+                    </div>
+
+                    <button onClick={Signo}>Verificar</button>
+
+                    <h2> Seu signo {libra ? '' : 'não'} é Libra!</h2>
+                    
+            </div>
+
         </main>
     )
 }
