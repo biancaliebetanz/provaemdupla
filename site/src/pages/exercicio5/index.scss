@@ -1,0 +1,21 @@
+.fundo5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #af3f3f, #8832ba);
+
+}
+
+.box{
+    background-color: #ffffff;
+    padding: 3em;
+    border-radius: 10px;
+}
+input{
+    
+    margin: 5px;
+}
+button{
+    margin: 10px;
+}

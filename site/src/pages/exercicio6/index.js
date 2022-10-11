@@ -1,4 +1,5 @@
 import { useState } from "react"
+import './index.scss'
 
 export default function Index(){
 
@@ -26,11 +27,14 @@ export default function Index(){
 
     }
     return(
-        <main>
+        <main className="fundo6">
+            <div className="box1">
             <label>Temperatura</label>
             <input type='number' value={temperatura} onChange={e => setTemperatura(Number(e.target.value))}/>
             <button onClick={Febre}> calcular</button>
             <p> A situação para sua temperatura é {situacao}</p>
+
+            </div>
         </main>
     )
 }
