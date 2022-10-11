@@ -7,7 +7,7 @@ export default function Index(){
         const[resposta, setResposta] = useState(0);
 
         function Parada(){
-            const a= (capacidade*consumo) /distancia;
+            const a= distancia/(capacidade*consumo);
 
             //bia vamos ter que usar mathAround()
         }
