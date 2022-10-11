@@ -15,6 +15,13 @@ export default function Index(){
                 <Link to='/exercicio2'> Exercicio 2 </Link>
                 <p></p>
                 <Link to='/exercicio3'> Exercicio 3 </Link> 
+                <p></p>
+                <Link to='/exercicio4'> Exercicio 4 </Link> 
+                <p></p>
+                <Link to='/exercicio5'> Exercicio 5 </Link> 
+                <p></p>
+                <Link to='/exercicio6'> Exercicio 6 </Link> 
+
             </div>
 
             </div>
