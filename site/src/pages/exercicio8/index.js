@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react"
+import './index.scss'
+
 
 export default function Index(){
 const[inteiras, setInteiras] = useState(0);
@@ -37,9 +39,10 @@ useEffect( () => {
 }, [inteiras, meias])
 
     return(
-        <main>
+        <main className="fundo8">
 
-            <div>
+           <div className="box3">
+           <div>
                 <label> Quantidade inteiras</label>
                 <input type='number' value={inteiras} onChange={e => setInteiras(Number(e.target.value))}/>
             </div>
@@ -59,6 +62,7 @@ useEffect( () => {
 
             <h2> O valor total dos ingressos é {resposta} </h2> 
             
+           </div>
         </main>
     )
 }

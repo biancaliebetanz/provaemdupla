@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import './index.scss'
 
 export default function Index(){
 
@@ -35,23 +36,27 @@ useEffect( () => {
 }, [gastos, ganhos])
 
     return(
-        <main>
+        <main className="fundo7">
+            <div className="box2">
             <h1> Cheque seu orçamento</h1>
 
-            <div>
-                <label>Ganhos</label>
-                <input type='number' value={ganhos} onChange={e => setGanhos(Number(e.target.value))}/>
-            </div>
-            <div>
-                <label>Gastos</label>
-                <input type='number' value={gastos} onChange={e => setGastos(Number(e.target.value))}/>
-            </div>
+                    <div>
+                        <label>Ganhos</label>
+                        <input type='number' value={ganhos} onChange={e => setGanhos(Number(e.target.value))}/>
+                    </div>
+                    <div>
+                        <label>Gastos</label>
+                        <input type='number' value={gastos} onChange={e => setGastos(Number(e.target.value))}/>
+                    </div>
 
-            <button onClick={OrcamentoFamiliar}> Checar </button>
+                    <button onClick={OrcamentoFamiliar}> Checar </button>
 
-            <div>
-                {resposta}
+                    <div>
+                        {resposta}
+                    </div>
+
             </div>
         </main>
     )
 }
+
