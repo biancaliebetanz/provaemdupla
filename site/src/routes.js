@@ -9,7 +9,7 @@ import Exercicio5 from './pages/exercicio5'
 import Exercicio6 from './pages/exercicio6'
 import Exercicio7 from './pages/exercicio7'
 import Exercicio8 from './pages/exercicio8'
-import exercicio9 from './pages/exercicio9'
+import Exercicio9 from './pages/exercicio9'
 import Exercicio10 from './pages/exercicio10'
 
 
