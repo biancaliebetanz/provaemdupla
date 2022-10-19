@@ -27,7 +27,6 @@ export default function Index(){
 
     function Velha(){
 
-
     }
 
     function exibir(pos){
