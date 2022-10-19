@@ -1,28 +1,57 @@
 import { useEffect, useState } from "react"
-import { useSearchParams } from "react-router-dom"
+import './index.scss'
 
 export default function Index() {
 
     const [altura, setAltura] = useState(0);
     const [largura, setLargura] = useState(0);
     const [msg, setMsg] = useState('');
+    const [bolinhas, setBolinhas] = useState('');
     const [retangulo, setRetangulo] = useState([]);
+    const [retanguloImagem, setRetanguloImagem] = useState([]);
+    const [larguraImagem, setLarguraImagem] = useState([]);
 
     function desenhar(){
+        let w = '';
         let x ='';
             for(let i=0; i<largura; i++){
                 x = x + '*';
+                w = w + 'O';
             }
         setMsg(x);
+        setBolinhas(w);
+        let y = [];
+        for(let i=0; i<altura; i++){
+            y = [...y, msg]
+        }
+        setRetangulo(y);
+        alturaImagem()
     }
 
+    function alturaImagem(){
+        let x = [];
+        for(let i=0; i<altura; i++){
+            x = [...x, '*']
+            console.log(x)
+        }
+        setRetanguloImagem(x);
+        
+        x= [];
+        for(let i=0; i<largura; i++){
+            x = [...x, '*']
+            console.log(x)
+        }
+        setLarguraImagem(x)
+    }
+
+    
     useEffect(() => {
         setMsg('');
         setRetangulo([])
     }, [altura, largura])
 
     return(
-        <main>
+        <main className="ex11">
             <div>
                 <h1> Exercicio 11</h1>
                 <h2> Desenhar retângulo </h2>
@@ -39,7 +68,30 @@ export default function Index() {
 
                 <button onClick={desenhar}> Desenhar </button>
 
-                <div> {msg} </div>
+                <div>
+                    {retangulo.map(item => 
+                        <p> {msg} </p> )}
+                </div>
+
+                <p> </p>
+
+                <div>
+                    {retangulo.map(item => 
+                        <p> {bolinhas} </p> )}
+                </div>
+
+                <div> 
+                    {retanguloImagem.map(item => 
+                    <div> 
+                    {larguraImagem.map(item => 
+                        <img className="imagem" src='./images/naruto.jpeg'/>
+                    )}
+                    </div>
+                    )}
+                </div>   
+
+                <div>
+                </div>
             </div>
         </main>
     )
