@@ -1,0 +1,25 @@
+.main {
+
+    .fundinho{
+        background-image: url('../../../public/images/fundo.webp');
+        display: flex;
+        flex-direction: column;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 20em;
+        height: 20em;
+    }
+
+    .fundinho div{
+
+        display: flex;
+        padding: 1.2em 1em;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .img{
+        width: 4em;
+        height: 4em;
+    }
+}
