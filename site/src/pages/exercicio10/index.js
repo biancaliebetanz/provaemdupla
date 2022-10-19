@@ -7,12 +7,11 @@ export default function Index(){
     const [msg, setMsg] = useState("");
 
     function criarLinha(){
-    for(let i=0; i<tamanho; i++){
-        resposta[i] = '*';
-        let x = msg + `${resposta}`;
+        let x ='';
+            for(let i=0; i<tamanho; i++){
+                x = x + '*';
+            }
         setMsg(x);
-    }
-    
     }
 
     useEffect(() =>{
