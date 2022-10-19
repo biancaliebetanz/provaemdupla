@@ -48,6 +48,8 @@ export default function Index() {
     useEffect(() => {
         setMsg('');
         setRetangulo([])
+        setRetanguloImagem([])
+        setLarguraImagem([])
     }, [altura, largura])
 
     return(
@@ -84,7 +86,7 @@ export default function Index() {
                     {retanguloImagem.map(item => 
                     <div> 
                     {larguraImagem.map(item => 
-                        <img className="imagem" src='./images/naruto.jpeg'/>
+                        <img className="imagem" src="./images/naruto.jpg"/>
                     )}
                     </div>
                     )}
