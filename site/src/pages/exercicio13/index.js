@@ -3,47 +3,64 @@ import './index.scss'
 
 export default function Index(){
 
-    const [p1, setP1] = useState(false);
-    const [p2, setP2] = useState(false);
-    const [p3, setP3] = useState(false);
-    const [p4, setP4] = useState(false);
-    const [p5, setP5] = useState(false);
-    const [p6, setP6] = useState(false);
-    const [p7, setP7] = useState(false);
-    const [p8, setP8] = useState(false);
-    const [p9, setP9] = useState(false);
+    const [p1, setP1] = useState();
+    const [p2, setP2] = useState();
+    const [p3, setP3] = useState();
+    const [p4, setP4] = useState();
+    const [p5, setP5] = useState();
+    const [p6, setP6] = useState();
+    const [p7, setP7] = useState();
+    const [p8, setP8] = useState();
+    const [p9, setP9] = useState();
 
-    const [p1img, setP1Img] = useState('./images/click.webp');
-    const [p2img, setP2Img] = useState('./images/click.webp');
-    const [p3img, setP3Img] = useState('./images/click.webp');
-    const [p4img, setP4Img] = useState('./images/click.webp');
-    const [p5img, setP5Img] = useState('./images/click.webp');
-    const [p6Img, setP6Img] = useState('./images/click.webp');
-    const [p7img, setP7Img] = useState('./images/click.webp');
-    const [p8img, setP8Img] = useState('./images/click.webp');
-    const [p9img, setP9Img] = useState('./images/click.webp');
-    
-    const [resultado, setResultado] = useState('');
+    const [resultado, setResultado] = useState();
+    const [vencedor, setVencedor] = useState('Iniciar jogo');
 
-    function Velha(){
-
+    function delay(milliseconds) {
+        return new Promise (resolve => setTimeout(resolve, milliseconds)) // acabar com o delay
     }
+
+    function Velha(pos){
+        if(pos == true){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
 
     function exibir(pos){
         if(pos == true)
         return './images/xis.webp'
+        if (pos == false)
+        return './images/bolinha.webp'
         else
-        return './images/bolinha/webp'
+        return './images/click.webp'
+    }
+
+    function resul(){
+        if(resultado == true){
+            setVencedor('O vencedor é xis')
+        }
+        else if(resultado == false){
+            setVencedor('O vencedor é bolinha')
+        }
+        else{
+            setVencedor('Iniciar jogo')
+        }
     }
 
     function jogo(){
-        if(p1 == true && p2 == true && p3 == true)
+        if(p1 == p2 && p2 == p3)
+        setResultado(p1)
     {}
     }
 
     useEffect(() => {
-
-    }, [p1, p2, p3, p4, p5, p6, p7, p8, p9])
+        jogo()
+        resul()
+    }, [p1, p2, p3, p4, p5, p6, p7, p8, p9, resultado])
 
 
     return(
@@ -53,32 +70,34 @@ export default function Index(){
 
         <div className='fundinho'>
 
-        <div>
-            <img className='img' src={p1img} alt="" onClick={Velha}/>
+        <div onClick={resul}>
+            <img className='img' src={exibir(p1)} alt="" onClick={() => setP1(Velha(p1))}/>
                 
-            <img className='img'src={p2img} alt="" onClick={Velha}/>
+            <img className='img'src={exibir(p2)} alt="" onClick={() => setP2(Velha(p2))}/>
                 
-            <img className='img' src={p3img} alt="" onClick={Velha}/>
+            <img className='img' src={exibir(p3)} alt="" onClick={() => setP3(Velha(p3))}/>
 
         </div>
 
         <div>
-            <img className='img' src={p4img} alt="" onClick={Velha}/>
+            <img className='img' src={exibir(p4)} alt="" onClick={() => setP4(Velha(p4))}/>
                 
-            <img className='img' src={p5img} alt="" onClick={Velha}/>
+            <img className='img' src={exibir(p5)} alt="" onClick={() => setP5(Velha(p5))}/>
                 
-            <img className='img' src={p6Img} alt="" onClick={Velha}/>
+            <img className='img' src={exibir(p6)} alt="" onClick={() => setP6(Velha(p6))}/>
 
         </div>
 
         <div>
-            <img className='img' src={p7img} alt="" onClick={Velha}/>
+            <img className='img' src={exibir(p7)} alt="" onClick={() => setP7(Velha(p7))}/>
                 
-            <img className='img' src={p8img} alt="" onClick={Velha}/>
+            <img className='img' src={exibir(p8)} alt="" onClick={() => setP8(Velha(p8))}/>
                 
-            <img className='img' src={p9img} alt="" onClick={Velha}/>
+            <img className='img' src={exibir(p9)} alt="" onClick={() => setP9(Velha(p9))}/>
 
         </div>
+
+        <div> {vencedor} </div>
                 
         </div>
 
