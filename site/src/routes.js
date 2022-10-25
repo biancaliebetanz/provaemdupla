@@ -14,6 +14,7 @@ import Exercicio10 from './pages/exercicio10'
 import Exercicio11 from './pages/exercicio11'
 import Exercicio12 from './pages/exercicio12'
 import Exercicio13 from './pages/exercicio13'
+import Exercicio14 from './pages/exercicio14'
 
 
 export default function index(){
@@ -34,6 +35,8 @@ export default function index(){
             <Route path='/exercicio11' element={<Exercicio11/>} />
             <Route path='/exercicio12' element={<Exercicio12/>} />
             <Route path='/exercicio13' element={<Exercicio13/>} />
+            <Route path='/exercicio14' element={<Exercicio14/>} />
+            
         </Routes>
         </BrowserRouter>
     )
